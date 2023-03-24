@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Numerology</title>
+		 <meta charset="UTF-8">
+		 <meta name="author" content="Venice Huelar">
+		 <meta name="keywords" content="HTML, CSS, JavaScript">
+ 		 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+        	body {background: lightblue; 
+            	text-align: center;
+            	font-family: arial;
+                color: navy;
+            }
+            button {padding: 10px; background:violet }
+            span {font-size: 0.5em; color: maroon}
+        </style>
+
+	</head>
+<body>
+	<h1> Your Fortune is in your name </h1>
+	<h2> Your Name is: <span id="thename"> </span></h2>
+    <h2> Today's fortune: <span id="fortune"> </span></h2>
+    
+    <button onclick = "numerology()"> Click here to enter your name </button>
+     <script>
+	/*This function will prompt and will ask for your name. Then it counts the length of the name.*/
+    function numerology(){
+	var entername = prompt("Input your name: ")
+	document.getElementById("thename").innerHTML=entername;
+	a = entername.length;
+	alert(a);
+	/*this adds the length of the  digits of the name*/
+	while (a>9){
+	a = (a - (a % 10) ) / 10 + (a % 10);
+	alert (a);
+	}
+	/*this will show your fortune through putting a condition and if it equals to any cases it will input the fortune*/
+	switch (a){
+	case 1 :	
+		document.getElementById("fortune").innerHTML= " You will have good health in the next 7 days.";
+	break;
+	case 2 :	
+		document.getElementById("fortune").innerHTML= " You will have bad luck at the next 3 days.";
+	break;
+	case 3 :	
+		document.getElementById("fortune").innerHTML= "Your crush will notice you tomorrow.";
+	break;
+	case 4 :	
+		document.getElementById("fortune").innerHTML= "You will get an uno this quarter.";
+	break;
+	case 5 :	
+		document.getElementById("fortune").innerHTML= "You will fail your quarter exam.";
+	break;
+	case 6 :	
+		document.getElementById("fortune").innerHTML= " April 1 will be your luckiest day this year.";
+	break;
+	case 7 :	
+		document.getElementById("fortune").innerHTML= "You won't see Taylor Swift even once in your lifetime.";
+	break;
+	case 8 :	
+		document.getElementById("fortune").innerHTML= "Your crush will confess to you.";
+	break;
+	case 9 :	
+		document.getElementById("fortune").innerHTML= "Your crush will reject you.";
+	break;
+	}
+		}
+    </script>
+    
+</body>
+</html>
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>One Time Password </title>
+		 <meta charset="UTF-8">
+		 <meta name="author" content="Venice Huelar">
+		 <meta name="keywords" content="HTML, CSS, JavaScript">
+ 		 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+        	body {background: lightblue; 
+            	text-align: center;
+            	font-family: arial;
+                color: navy;
+            }
+            button {padding: 10px; background:violet }
+            a {font-size: 0.5em; color: maroon}
+        </style>
+
+	</head>
+<body onload="generateOTP()">
+	<h1> Final Verification Step </h1>
+	<h2> Current OTP: <span id="otp"> _ _ _ _ _ _ <span> <a href="" onclick="generateOTP()"> New OTP </a></h2>
+    <button onclick="typeOTP()"> Enter the OTP as shown above </button>
+    
+    <script>
+		/*This function will generate OTP when the page loads*/
+	function generateOTP(){
+		var digits = '0123456789';  
+		var otp = '';  
+		for (var i = 0; i<6; i++) {   
+		otp += digits[Math.floor(Math.random() * 10)]; 
+		}
+	document.getElementById('otp').textContent= otp;
+}		/*This function will check if the OTP you input is correct or not, if it is, it will redirect you to a website */
+		function typeOTP() {
+		var urotp = prompt("Type your generated OTP to be directed to your website: ");
+		var yourotp = document.getElementById('otp').textContent;
+		
+		if( urotp == yourotp){
+		window.open('https://youtu.be/6474sr7e4sk');
+		} else{
+		alert("INCORRECT OTP!!! TRY AGAIN!!!");
+		generateOTP();
+		}
+    	}
+    
+    </script>
+</body>
+</html>
